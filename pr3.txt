@@ -1,0 +1,45 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args)
+	{
+	 int arr[]=new int[50];  
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter the size of aray : ");
+	 int size=sc.nextInt();
+	 System.out.println("Enter the elements in array : ");
+    
+	 for(int i=0;i<size;i++)
+	 {
+		  arr[i]=sc.nextInt();
+	 }
+	 
+     System.out.println("Unsorted array is : ");
+     for(int i=0;i<size;i++)  
+     {  
+         System.out.print(arr[i]+ "  ");  
+     }  
+ 
+     for(int i=0;i<size-1;i++)
+     {
+    	int initial=i;
+    	for(int j=i+1;j<size;j++)
+    		if(arr[j]<arr[initial])
+    		{
+    		    initial=j;
+    		}
+    		if(initial!=i)
+    		{
+    	    int temp=arr[initial];
+    	     arr[initial]=arr[i];
+    	     arr[i]=temp;
+    		}
+     }
+     System.out.println("\nSorted array is : ");
+     for(int i=0;i<size;i++)  
+     {  
+         System.out.print(arr[i]+ "  ");  
+     }  
+   
+	}
+}
